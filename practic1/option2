@@ -5,17 +5,15 @@ int main()
 {
     int option;
     double numb1, numb2;
+     cout<<"Enter 1 number: ";cin>>numb1;
+     cout<<"Enter 2 number: ";cin>>numb2;
     cout<<"Enter 1 for addition and 2 for subtraction: ";
     cin>>option;
     switch (option) {
     case 1:
-        cout<<"Enter 1 number: ";cin>>numb1;
-        cout<<"Enter 2 number: ";cin>>numb2;
         cout<<numb1+numb2;
         break;
     case 2:
-        cout<<"Enter 1 number: ";cin>>numb1;
-        cout<<"Enter 2 number: ";cin>>numb2;
         cout<<numb1-numb2;
         break;
     default:
