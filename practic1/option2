@@ -5,19 +5,19 @@ int main()
 {
     int option;
     double numb1, numb2;
-     cout<<"Enter 1 number: ";cin>>numb1;
-     cout<<"Enter 2 number: ";cin>>numb2;
+     cout<<"Enter 1 number: ";cin>>numb1;  //ввод 1 числа
+     cout<<"Enter 2 number: ";cin>>numb2;  //ввод 2 числа
     cout<<"Enter 1 for addition and 2 for subtraction: ";
     cin>>option;
     switch (option) {
-    case 1:
+    case 1:                                //сложение
         cout<<numb1+numb2;
         break;
-    case 2:
+    case 2:                                //вычитание
         cout<<numb1-numb2;
         break;
     default:
-        cout<<"Sorry, there was an input error.";
+        cout<<"Sorry, there was an input error.";   //ошибка вывода
         break;
     }
 }
