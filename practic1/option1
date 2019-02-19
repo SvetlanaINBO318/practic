@@ -1,0 +1,11 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    string s;
+    cout<<"Enter your name: "; //Просьба ввести имя
+    getline(cin,s);            //Ввод имени
+    cout<<"Hello, "<<s;        //Приветствие
+}
