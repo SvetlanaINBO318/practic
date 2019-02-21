@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double less_forZ(double a,double b){ //функция для a<b
+    double k=0;
+    k=sqrt(abs(pow(a,2)-pow(b,2)));
+    return k;
+}
+
+double more_equally_forZ(double a,double b){ //функция для a>=b
+    double k=0;
+    k=1-2*cos(a)*sin(b);
+    return k;
+}
+
+double less_forT(double a,double b,double z){//функция для z<b
+    double k=0;
+    k=pow((z+pow(a,2)*b),1/3);
+    return k;
+}
+
+double equally_forT(double a,double b,double z){//функция для z==b
+    double k=0;
+    k=1-log10(z)+cos(pow(a,2)*b);
+    return k;
+}
+
+double more_forT(double a,double z){//функция для z>b
+    double k=0;
+    k=1/(cos(z*a));
+    return k;
+}
+
+
+int main()
+{
+    double a,b,z,t;
+    int option;
+    cout<<"For data input enter 1, for the initial data 0 ";
+    cin>>option;
+    switch (option) { //выбор ввода
+    case 1:
+       cout<<"Enter 1 number: "; cin>>a;
+       cout<<"Enter 1 number: "; cin>>b;
+        break;
+    case 0:
+       a=-0.6;
+       b=5.3;
+        break;
+    default:
+        cout<<"Sorry, there was an input error.";
+        break;
+    }
+    if(a<b)  z=less_forZ(a,b);          //исспользование функций
+    if(a>=b) z=more_equally_forZ(a,b);
+    if(z<b)  t=less_forT(a,b,z);
+    if(z==b) t=equally_forT(a,b,z);
+    if(z>b)  t=more_forT(a,z);
+    cout<<"a= "<<a<<";"<<endl; //вывод значений
+    cout<<"b= "<<b<<";"<<endl;
+    cout<<"t= "<<t<<";"<<endl;
+    cout<<"z= "<<z<<";"<<endl;
+}
