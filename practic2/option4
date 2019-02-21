@@ -1,0 +1,69 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+
+double less_equally_forY(double a,double x){ //функция для a<=x
+    double k=0;
+    k=a+log(x+a);
+    return k;
+}
+
+double more_forY(double a,double x){ //функция для a>x
+    double k=0;
+    k=sqrt(sin(a*x));
+    return k;
+}
+
+double more_forT(double a,double x,double y){//функция для a>y
+    double k1=0;
+    k1=a-x;
+    return y/k1;
+}
+
+double equally_forT(double a,double x,double y){//функция для a==y
+    double k=0,k1=0;
+    k1=a-x;
+    k=y/k1+(a+x)/pow(y,2);
+    return k;
+}
+
+double less_forT(double a,double x,double y){//функция для a<y
+    double k=0;
+    k=tan(a*x)+cos(2*a*y);
+    return k;
+}
+
+int main()
+{
+    double a,x,y,t;
+    int option;
+    cout<<"For data input enter 1, for the initial data 0 ";
+    cin>>option;
+    switch (option) { //выбор ввода
+    case 1:
+       cout<<"Enter 1 number: "; cin>>a;
+       cout<<"Enter 1 number: "; cin>>x;
+        break;
+    case 0:
+       a=3.5;
+       x=-0.7;
+        break;
+    default:
+        cout<<"Sorry, there was an input error.";
+        break;
+    }
+    if(a<=x) y=less_equally_forY(a,x); //исспользование функций
+    if(a>x && (sin(a*x)>0))  y=more_forY(a,x);
+    if(a>y)  t=more_forT(a,x,y);
+    if(a==y) t=equally_forT(a,x,y);
+    if(a<y)  t=less_forT(a,x,y);
+    if((sin(a*x)>0)){
+    cout<<"a= "<<a<<";"<<endl; //вывод значений
+    cout<<"x= "<<x<<";"<<endl;
+    cout<<"y= "<<y<<";"<<endl;
+    cout<<"t= "<<t<<";"<<endl;}
+    else cout<<"ERROR, negative root ";
+    return 0;
+}
