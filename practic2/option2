@@ -61,4 +61,5 @@ int main()
     cout<<"b= "<<b<<";"<<endl;
     cout<<"t= "<<t<<";"<<endl;
     cout<<"z= "<<z<<";"<<endl;
+    return 0;
 }
