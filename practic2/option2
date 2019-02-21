@@ -57,7 +57,7 @@ int main()
     if(z<b)  t=less_forT(a,b,z);
     if(z==b) t=equally_forT(a,b,z);
     if(z>b)  t=more_forT(a,z);
-    cout<<"a= "<<a<<";"<<endl; //вывод значений
+    cout<<"a= "<<a<<";"<<endl;          //вывод значений
     cout<<"b= "<<b<<";"<<endl;
     cout<<"t= "<<t<<";"<<endl;
     cout<<"z= "<<z<<";"<<endl;
