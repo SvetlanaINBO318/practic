@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+struct Book{
+    int year;
+    string author;
+    int pages;
+    string name;
+};
+
+int main()
+{
+   Book one={1859,(string)"Goncharov", 510,(string) "Oblomov"};
+}
