@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <cstring>
+using namespace std;
+
+struct Auto{
+    string Mark;      //марка
+    string Model;     //модель
+    string privod;    //привод
+    double Mosh;      //мощность
+    int year;         //год выпуска
+    string city;      //город сборки
+    double tank;      //расход топлива
+    double probeg;    //пробег
+    int sit;          //кол-во мест
+    int owner;        //кол-во хозяинов
+    void display(){
+        cout<<"Marka: "<<Mark<<endl;
+        cout<<"Model: "<<Model<<endl;
+        cout<<"Privod: "<<privod<<endl;
+        cout<<"Moshchnost: "<<Mosh<<" lt "<<endl;
+        cout<<"God vipuska: "<<year<<endl;
+        cout<<"Gorod sborki: "<<city<<endl;
+        cout<<"Rosxod topliva: "<<tank<<" lt "<<endl;
+        cout<<"Probeg: "<<probeg<<endl;
+        cout<<"Kolichestvo mest: "<<sit<<endl;
+        cout<<"Kolichestvo vladelsev: "<<owner<<endl;
+    }
+};
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    Auto MyCar={(string) "Mitsubishi",(string)"Outlander",(string)"Full",146,2014,(string)"Japan",7.8,185381,5,2 };
+    MyCar.display();
+    return 0;
+}
