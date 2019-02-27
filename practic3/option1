@@ -5,11 +5,11 @@
 using namespace std;
 
 struct Book{
-    int year;
-    string author;
-    int pages;
-    string name;
-    void display(){ cout<<"Year: "<<year<<endl;
+    int year;               // год выпуска
+    string author;          //автор
+    int pages;              //кол-во страниц
+    string name;            //название
+    void display(){ cout<<"Year: "<<year<<endl;         //вывод
                   cout<<"Author: "<<author<<endl;
                   cout<<"Pages: "<<pages<<endl;
                   cout<<"Name: "<<name<<endl;}
