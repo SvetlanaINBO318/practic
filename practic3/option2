@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+struct Students{
+    string nameGroup;           //имя группы
+    string nameStud[20];        //именя студентов
+    int ageStud[20];            //возраст студентов
+    int exam[20];               //средний балл успеваемости
+};
+
+int main()
+{
+   Students good={(string)"INBO0318",{(string)"Anna",(string)"Ivan",(string)"Maxim"},{18,18,18},{0,0,0}};
+   return 0;
+}
