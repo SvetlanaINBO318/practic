@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+double *rodim_massi(int size){               //создание массива
+    double *array = new double[size];
+    return array;
+}
+
+double* prisvoenie_znacheni(double* array,int size) {      //заполнение
+    for (int i=0;i<size;i++)
+        array[i] = i+1;
+    return array;
+}
+
+void return_my_array(double* array,int size) {           //вывод
+    for (int i=0;i<size;i++)
+        cout<<array[i]<<" ";
+}
+
+double* ubistvo_array(double* array) {                  //освобождение памяти
+    delete[]array;
+    return array;
+}
+
+double* sort_my_array(double* array) {                              //сортировочка
+    for (int i=0;i<11;i++)
+        if (i%2 == 0) swap(array[i],array[i + 1]);
+    return array;
+}
+
+int main()
+{
+        int size=12;
+        double *array;
+        cout<<"Proizvodim rozhdenie massiva"<<endl;
+        array = rodim_massi(size);
+        cout<<"Proizvodim prisvoenie znacheni"<<endl;
+        array = prisvoenie_znacheni(array, size);           //заполняем
+        cout<<"Vivodim massiv: "<<endl;
+        return_my_array(array,size);                        //выводим в свет наш массив
+        cout<<endl<<"Massiv sortiryetsa: "<<endl;
+        array=sort_my_array(array);                         //сортируем массивчик
+        cout<<"Vivodim sortirovanny massiv: "<<endl;
+        return_my_array(array,size);
+        cout<<endl<<"Vnimanie, proiskhodit ubistvo massiva!!!"<<endl;
+        array=ubistvo_array(array);                         //убиваем наш массив((((
+}
