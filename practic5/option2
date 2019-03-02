@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+void sort_my_array(int* array, int size) {
+    int k=0;
+       while (k!=size) {
+           int min=k;
+           for (int i=k;i<size;i++)
+               if (array[min]>array[i]) min=i;
+           swap(array[k],array[min]);
+           k++;
+       }
+}
+
+void sort_my_array(double* array, int size) {
+    int k=0;
+       while (k!=size) {
+           int min=k;
+           for (int i=k;i<size;i++)
+               if (array[min]>array[i]) min=i;
+           swap(array[k],array[min]);
+           k++;
+       }
+}
+
+void return_my_array(int* Iarray,double* Darray,int size){
+    for (int i=0;i<size;i++) {
+        cout <<"Int array: "<<Iarray[i]<< "\tDouble array: " <<Darray[i]<< endl;
+    }
+}
+
+int main()
+{
+    int size=10;
+    int Iarray[size] = {1,2,10,9,3,4,8,7,5,6};
+    double Darray[size] = {1.6,1.1,10.8,9.8,0.7,6.6,5,9.009,4,13};
+    sort_my_array(Iarray,size);
+    sort_my_array(Darray,size);
+    return_my_array(Iarray,Darray,size);
+    return 0;
+}
