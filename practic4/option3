@@ -1,0 +1,36 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+
+int ** prisvoenie_znacheni(int** array,int stroki,int stolbiki) {      //заполнение
+    for (int i=0;i<stroki;i++)
+           for (int j=0;j<stolbiki;j++)
+               array[i][j] = rand()%40+10;
+    return array;
+}
+
+void return_my_array(int** array,int stroki,int stolbiki) {           //вывод
+    for (int i=0;i<stroki;i++) {
+           for (int j=0;j<stolbiki;j++)
+               cout << array[i][j] << ' ';
+           cout << endl;
+       }
+}
+
+int main()
+{
+    srand(time(0));
+    int stroki,stolbiki;
+    cout << "Vvedite kol-vo strok: ";
+    cin >> stroki;
+    cout <<"Vvedite kol-vo slobikov: ";
+    cin>> stolbiki;
+    int **array = new int *[stroki];            //создаем 
+    for (int i=0;i<stroki;i++)                  //матрицу
+        array[i] = new int[stolbiki];
+    array = prisvoenie_znacheni(array,stroki,stolbiki);
+    cout << "Poluchim dvumerniy massiv : " << endl;
+    return_my_array(array,stroki,stolbiki);
+    return 0;
+}
