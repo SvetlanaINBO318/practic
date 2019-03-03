@@ -1,0 +1,50 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int umnozenie(int a,int b){
+    return a*b;
+}
+
+double umnozenie(double a,double b){
+    return a*b;
+}
+
+int delenie(int a,int b){
+    return a/b;
+}
+
+double delenie(double a,double b){
+    return a/b;
+}
+
+int slozenie(int a,int b){
+    return a+b;
+}
+
+double slozenie(double a,double b){
+    return a+b;
+}
+
+int vichetanie(int a,int b){
+    return a-b;
+}
+
+double vichetanie(double a,double b){
+    return a-b;
+}
+
+int main()
+{
+    int a,b;
+    double a1,b1;
+    cout<<"Vvedite 2 selix chisla: ";
+    cin>>a>>b;
+    cout<<"Vvedite 2 drobnix chisla: ";
+    cin>>a1>>b1;
+    cout<<"Slozenie: "<<slozenie(a,b)<<'\t'<<slozenie(a1,b1)<<endl;
+    cout<<"Vicitanie: "<<vichetanie(a,b)<<'\t'<<vichetanie(a1,b1)<<endl;
+    cout<<"Umnozenie: "<<umnozenie(a,b)<<'\t'<<umnozenie(a1,b1)<<endl;
+    cout<<"Delenie: "<<fixed<<setprecision(3)<<delenie(a,b)<<'\t'
+       <<fixed<<setprecision(3)<<delenie(a1,b1)<<endl;
+}
