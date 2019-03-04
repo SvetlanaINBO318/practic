@@ -1,0 +1,181 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+class Funk{
+    public:
+        virtual void return_my_funk()=0;
+        virtual float result(double x)=0;
+        virtual void dx()=0;
+        virtual Funk* copy()=0;
+};
+
+class Constanta: public Funk {
+    public:
+        void return_my_funk(){
+            cout << "f(x) = constanta" << endl;
+        }
+        float result(double x) {
+            return 1;
+        }
+        void dx() {
+            cout << "f'(x) = 0" << endl;
+        }
+        Funk* copy() {
+            Funk* f = new Constanta;
+            return f;
+        }
+};
+
+class Peremennay : public Funk {
+    public:
+        void return_my_funk() {
+            cout << "f(x) = x" << endl;
+        }
+        float result(double x) {
+            return x;
+        }
+        void dx() {
+            cout << "f'(x) = 1" << endl;
+        }
+        Funk* copy()  {
+            Funk* f = new Peremennay;
+            return f;
+        }
+};
+
+class Summ: public Funk {
+    public:
+        void return_my_funk() {
+            cout << "f(x) = 2x^6 + 5" << endl;
+        }
+        float result(double x) {
+            return 2*pow(x,6) + 5;
+        }
+        void dx() {
+            cout << "f'(x) = 12*x^5";
+        }
+        Funk* copy() {
+            Funk* f = new Summ;
+            return f;
+        }
+};
+
+class Raznost: public Funk {
+    public:
+        void return_my_funk() {
+            cout << "f(x) = x - 2x^4" << endl;
+        }
+        float result(double x) {
+            return x - 2*pow(x,4);
+        }
+        void dx() {
+            cout << "f'(x) = 1 - 12*x^3" << endl;
+        }
+        Funk* copy()  {
+            Funk* f = new Raznost;
+            return f;
+        }
+};
+
+class Proizvedenie : public Funk {
+    public :
+        void return_my_funk() {
+            cout << "f(x) = 5*x^2" << endl;
+        }
+        float result(double x) {
+            return 5*pow(x,2);
+        }
+        void dx() {
+            cout << "f'(x) = x^2+10x" << endl;
+        }
+        Funk* copy()  {
+            Funk* f = new Proizvedenie;
+            return f;
+        }
+};
+
+class Chastnoe : public Funk {
+    public:
+        void return_my_funk() {
+            cout  << "f(x) = (x-1)/(x+1)" << endl;
+        }
+        float result(double x) {
+            return (x-1)/(x+1);
+        }
+        void dx() {
+            cout << "f'(x) = 2/(x+1)^2" << endl;
+        }
+        Funk* copy()  {
+            Funk* f = new Chastnoe;
+            return f;
+        }
+};
+
+class Sinus : public Funk {
+    public :
+        void return_my_funk() {
+            cout << "f(x) = sin(x)" << endl;
+        }
+        float result(double x) {
+            return sin(x);
+        }
+        void dx() {
+            cout << "f'(x) = cos(x)" << endl;
+        }
+        Funk* copy()  {
+            Funk* f = new Sinus;
+            return f;
+        }
+};
+
+class Cosinus : public Funk {
+    public:
+        void return_my_funk() {
+            cout << "f(x) = cos(x)" << endl;
+        }
+        float result(double x) {
+            return cos(x);
+        }
+        void dx() {
+            cout << "f'(x) = - sin(x)" << endl;
+        }
+        Funk* copy()  {
+            Funk* f = new Cosinus;
+            return f;
+        }
+};
+
+class Exp : public Funk {
+    public:
+        void return_my_funk() {
+            cout << "f(x) = exp(x)" << endl;
+        }
+        float result(double x) {
+            return exp(x);
+        }
+        void dx() {
+            cout << "f'(x) = exp(x)" << endl;
+        }
+        Funk* copy()  {
+            Funk* f = new Exp;
+            return f;
+        }
+};
+
+class LN: public Funk {
+    public:
+        void return_my_funk() {
+            cout << "f(x) = ln(x)" << endl;
+        }
+        float result(double x) {
+            return log(x);
+        }
+        void dx() {
+            cout << "f'(x) = 1/x" << endl;
+        }
+        Funk* copy()  {
+            Funk* f = new LN;
+            return f;
+        }
+};
