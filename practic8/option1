@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    ofstream f1;
+    ifstream f2;
+    f2.open("new.txt");
+    if (f2.is_open()) {
+        string s;
+        while (!f2.eof()) {
+            f2 >> s;
+            cout << s << endl;
+        }
+        f2.close();
+    }
+    else {
+        cout << "Faila net, no mi sozdali" << endl;
+        f1.open("new.txt");
+        f1.close();
+    }
+    return 0;
+}
