@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+class figura {
+protected:
+    int ugli;
+    virtual void name()=0;
+};
+
+class chetirihugolnik :public figura {
+public:
+    chetirihugolnik() { ugli = 4; }
+};
+
+class romb :public chetirihugolnik {
+public:
+    double storona1;
+    double storona2;
+    romb(double a, double b) {
+        storona1 = a;
+        storona2 = b;
+    }
+    void name() {
+        cout << "Vi sozdali romb";
+    }
+};
+
+class priamougolnik :public chetirihugolnik {
+public:
+    double storona1;
+    priamougolnik(double a) {
+        storona1=a;
+    }
+    void name(){
+        cout << "Vi sozdali priamougolnik" ;
+    }
+};
