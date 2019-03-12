@@ -1,0 +1,16 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    ofstream f1;
+    string s;
+    f1.open("new.txt");
+    cout << "Vvedite tekst: " << endl;
+    getline(cin, s);
+    f1 << s;
+    f1.close();
+    return 0;
+}
