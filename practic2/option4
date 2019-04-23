@@ -44,7 +44,7 @@ int main()
     switch (option) { //выбор ввода
     case 1:
        cout<<"Enter 1 number: "; cin>>a;
-       cout<<"Enter 1 number: "; cin>>x;
+       cout<<"Enter 2 number: "; cin>>x;
         break;
     case 0:
        a=3.5;
