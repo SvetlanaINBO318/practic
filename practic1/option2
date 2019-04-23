@@ -20,4 +20,5 @@ int main()
         cout<<"Sorry, there was an input error.";   //ошибка вывода
         break;
     }
+    return 0;
 }
